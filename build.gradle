@@ -1,0 +1,34 @@
+version = '0.1.0-SNAPSHOT'
+defaultTasks 'clean','build'
+apply plugin: 'java'
+apply plugin: 'idea'
+sourceCompatibility = 1.5
+ext.rundeckPluginVersion= '1.2'
+ext.rundeckVersion= '2.10.2'
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile( [group: 'org.rundeck', name: 'rundeck-core', version: rundeckVersion, ext:'jar'])
+    //testCompile(
+        //[group: 'junit', name: 'junit', version: '3.8.1',ext:'jar']
+    //)
+}
+
+ext.pluginClassNames='com.example.rundeck.plugin.example.MyNotificationPlugin'
+jar {
+    manifest {
+        attributes 'Rundeck-Plugin-Classnames': pluginClassNames
+        attributes 'Rundeck-Plugin-File-Version': version
+        attributes 'Rundeck-Plugin-Version': rundeckPluginVersion, 'Rundeck-Plugin-Archive': 'true'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4.1'
+}
+
