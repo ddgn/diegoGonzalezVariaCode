@@ -6,10 +6,15 @@ This is an base for a Rundeck Notification plugin implementation.
 
     ./gradlew build
 
-Produces:
+Runs all tests and produces:
 
 	build/libs/plugin-example-0.1.0-SNAPSHOT.jar
 
+## Testing
+
+    ./gradlew check
+
+Runs all tests
 
 ## Install
 
