@@ -5,7 +5,7 @@ apply plugin: 'groovy'
 apply plugin: 'idea'
 sourceCompatibility = 1.8
 ext.rundeckPluginVersion= '1.2'
-ext.rundeckVersion= '2.10.2'
+ext.rundeckVersion= '3.0.22'
 
 
 repositories {
